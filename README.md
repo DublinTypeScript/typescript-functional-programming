@@ -1,6 +1,8 @@
-# typescript-functional-programming
-Typescript functional programming code samples
+![](https://raw.githubusercontent.com/DublinTypeScript/DublinTypeScript.github.io/master/assets/baner.jpeg)
 
-![](https://a248.e.akamai.net/secure.meetupstatic.com/photos/theme_head/b/6/1/b/full_6826619.jpeg)
+# Learning Functional Programming (FP) with TypeScript
+TypeScript functional programming code samples and slides from the [Dublin TypeScript Meetup](https://www.meetup.com/Dublin-TypeScript-Meetup/events/231907992/).
 
-![](https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/2/6/d/a/600_452769946.jpeg)
+<img src="https://raw.githubusercontent.com/DublinTypeScript/DublinTypeScript.github.io/master/assets/fp.jpeg" width="250" />
+
+// TODO
