@@ -30,6 +30,10 @@ build/Release
 node_modules
 jspm_packages
 
+# Build direcotries
+lib
+dist
+
 # Optional npm cache directory
 .npm
 

@@ -3,7 +3,24 @@ declare module "spectacle" {
     export var Deck: any;
 }
 
+declare module "spectacle/lib/themes/default" {
+    var createTheme: any;
+    export default createTheme;
+}
+
+interface ICodeSlideProps {
+    transition: any[];
+    lang: string;
+    code: string;
+    ranges: any[]
+}
+
 declare module "spectacle-code-slide" {
-    var CodeSlide: any;
-    export default CodeSlide;
+    interface ICodeSlideProps {
+        transition: any[];
+        lang: string;
+        code: string;
+        ranges: any[]
+    }
+    export class CodeSlide extends React.Component<ICodeSlideProps, any> {}
 }

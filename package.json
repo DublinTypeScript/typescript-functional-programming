@@ -28,6 +28,16 @@
     "jquery": "^3.1.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "spectacle": "^1.2.5"
+    "spectacle": "^1.2.5",
+    "spectacle-code-slide": "^0.3.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.0.2",
+    "run-sequence": "^1.2.2",
+    "typescript": "^2.0.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

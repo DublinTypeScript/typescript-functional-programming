@@ -14,7 +14,7 @@ var examResults = [
 var totalScore = 0;
 
 for (var i = 0; i < examResults.length; i++) {
-    totalScore = totalScore + examResults[i].score;
+    totalScore += examResults[i].score;
 }
 
 var scoreAvg = Math.round(totalScore / examResults.length);

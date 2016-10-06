@@ -5,4 +5,4 @@ TypeScript functional programming code samples and slides from the [Dublin TypeS
 
 <img src="https://raw.githubusercontent.com/DublinTypeScript/DublinTypeScript.github.io/master/assets/fp.jpeg" width="250" />
 
-// TODO
+Visit http://www.dublintypescript.org/typescript-functional-programming/index.html to see slides.

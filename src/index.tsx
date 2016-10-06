@@ -2,9 +2,18 @@
 
 import * as React from "react";
 import { Spectacle, Deck } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+import * as SpectacleCodeSlide from "spectacle-code-slide";
+import createTheme from "spectacle/lib/themes/default";
 import { render } from "react-dom";
 import * as $ from "jquery";
+
+var CodeSlide: any = SpectacleCodeSlide;
+
+// Theme
+const theme = createTheme({
+  primary: 'white',
+  quartenary: '#122b45'
+});
 
 // Contracts
 interface IRange {
@@ -47,38 +56,42 @@ function makeOnSuccess(renderApp: (files: IFile[]) => void) {
 
 }
 
+class Presentation extends React.Component<IPresentationProps, void> {
+
+  public render() {
+    return (
+      <Spectacle theme={theme}>
+        <Deck transition={[]} transitionDuration={0} progress="bar">
+          {this._renderSlides(this.props.files)}
+        </Deck>
+      </Spectacle>
+    );
+  }
+
+  // map IFile[] => CodeSlide[]
+  private _renderSlides(files: IFile[]): JSX.Element[] {
+    return files.map((file, index) => {
+      return this._renderSlide(file, index);
+    });
+  }
+
+  // map IFile => CodeSlide
+  private _renderSlide(file: IFile, index: number): JSX.Element {
+    return (
+      <CodeSlide
+            key={index}
+            transition={[]}
+            lang="js"
+            code={file.code}
+            ranges={file.ranges}
+        />
+    );
+  }
+
+}
+
 // Render App
 let onSuccess = makeOnSuccess((files: IFile[]) => {
-
-  class Presentation extends React.Component<IPresentationProps, void> {
-    public render() {
-      return (
-        <Spectacle>
-          <Deck transition={[]} transitionDuration={0} progress="bar">
-            this._renderSlides(this.props.files);
-          </Deck>
-        </Spectacle>
-      );
-    }
-
-    // map IFile[] => CodeSlide[]
-    private _renderSlides(files: IFile[]) {
-      files.map((file) => this._renderSlide(file));
-    }
-
-    // map IFile => CodeSlide
-    private _renderSlide(file: IFile) {
-      return (
-        <CodeSlide
-              transition={[]}
-              lang="js"
-              code={file.code}
-              ranges={file.ranges}
-          />
-      );
-    }
-
-  }
 
   // rende to DOM
   render(<Presentation files={files} />, document.getElementById("main"));
@@ -104,12 +117,10 @@ let files: IFile[] = [
     loaded: false,
     code: "",
     ranges: [
-      { loc: [0, 270], title: "Walking through some code" },
-      { loc: [0, 1], title: "The Beginning" },
-      { loc: [1, 2] },
-      { loc: [1, 2], note: "Heres a note!" },
-      { loc: [2, 3] },
-      { loc: [8, 10] }
+      { loc: [0, 0], title: "IMPERATIVE" },
+      { loc: [0, 13], note: "We need to calculate hte AVG of the AVG" },
+      { loc: [12, 19], note: "First we calculate the total score" },
+      { loc: [19, 21], note: "Then we calculate the AVG score" }
     ]
   },
   {
