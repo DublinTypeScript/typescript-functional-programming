@@ -32,7 +32,6 @@ jspm_packages
 
 # Build direcotries
 lib
-dist
 
 # Optional npm cache directory
 .npm
