@@ -19,6 +19,4 @@ function fetchUsers(): Maybe<User[]> {
 }
 
 var maybeUsers = fetchUsers();
-
-//  Error: Object is possibly 'undefined' :)
-maybeUsers.forEach((user: User) => { console.log(name); });
+maybeUsers.forEach((user: User) => { console.log(name); }); //  Error: Object is possibly 'undefined' :)

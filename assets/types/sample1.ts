@@ -18,4 +18,4 @@ function fetchUsers(): User[] {
     }
 }
 
-var users = fetchUsers(); // Error!
+var users = fetchUsers(); // Error or User[] 💩 ???

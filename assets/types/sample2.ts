@@ -51,7 +51,6 @@ class Maybe<T> implements IMaybe<T> {
     }
 }
 
-
 interface User {
     name: string;
 }
