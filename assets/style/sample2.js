@@ -12,13 +12,13 @@ var examResults = [
 ];
 
 var totalScore = examResults.map((result) => { return result.score; })
-                        .reduce((prev, curr) => { return prev + curr; }, 0);
+                            .reduce((prev, curr) => { return prev + curr; }, 0);
 
 var scoreAvg = Math.round(totalScore / examResults.length);
 
 var timesOfAvg = examResults.filter((result) => { return result.score === scoreAvg; })
-                        .map((result) => { return result.totalTimeSpentStudying; });
+                            .map((result) => { return result.totalTimeSpentStudying; });
 
-var result = Math.round(
-    timesOfAvg.reduce((prev, curr) => { return prev + curr; }, 0) / timesOfAvg.length
-);
+var totalTimeOfAvg = timesOfAvg.reduce((prev, curr) => { return prev + curr; }, 0);
+
+var result = Math.round(totalTimeOfAvg / timesOfAvg.length);
