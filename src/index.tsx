@@ -121,7 +121,7 @@ let files: IFile[] = [
         loc: [0, 0], title: "IMPERATIVE",
         note: "This example of imperative programming is efficient but highly-coupled, hard to test and hard to re-use!"
       },
-      { loc: [0, 13], note: "We need to calculate hte AVG of the AVG" },
+      { loc: [0, 13], note: "We need to calculate the AVG of the AVG" },
       { loc: [12, 19], note: "First we calculate the total score" },
       { loc: [18, 21], note: "Then we calculate the AVG score" },
       { loc: [20, 30], note: "Then we find time spent studyng by students with AVG score" },
@@ -134,27 +134,50 @@ let files: IFile[] = [
     loaded: false,
     code: "",
     ranges: [
-      { loc: [0, 0], title: "IMPERATIVE + LAMBDA" },
-      { loc: [0, 13], note: "We need to calculate hte AVG of the AVG" }
+      {
+        loc: [0, 0], title: "IMPERATIVE + LAMBDA",
+        note: "This example of imperative programming is inefficient but highly-coupled, hard to test and hard to re-use!"
+      },
+      { loc: [0, 13], note: "We need to calculate the AVG of the AVG" },
+      { loc: [12, 16], note: "First we calculate the total score" },
+      { loc: [15, 18], note: "Then we calculate the AVG score" },
+      { loc: [17, 21], note: "Then we find time spent studyng by students with AVG score" },
+      { loc: [20, 23], note: "Then we calculate the total time spent studyng by students with AVG score" },
+      { loc: [22, 25], note: "Finally, we calculate the AVG time spent studyng by students with AVG score" }
     ]
   },
   {
     path: "./assets/style/sample3.js",
     loaded: false,
     code: "",
-    ranges: []
+    ranges: [
+      {
+        loc: [0, 0], title: "GOING FUNCTIONAL",
+        note: "This example of imperative/funcitonal programming is inefficient but less coupled, less hard to test and easier to re-use!"
+      }
+    ]
   },
   {
     path: "./assets/style/sample4.js",
     loaded: false,
     code: "",
-    ranges: []
+    ranges: [
+      {
+        loc: [0, 0], title: "PURE FUNCTIONAL PROGRAMMING",
+        note: "This example of funcitonal programming is inefficient but not coupled and easy to test and re-use!"
+      }
+    ]
   },
   {
     path: "./assets/style/sample5.ts",
     loaded: false,
     code: "",
-    ranges: []
+    ranges: [
+      {
+        loc: [0, 0], title: "PURE FUNCTIONAL PROGRAMMING + STATIC TYPES",
+        note: "This example of funcitonal programming is inefficient but not coupled, secure and easy to test and re-use!"
+      }
+    ]
   },
   {
     path: "./assets/types/sample1.ts",

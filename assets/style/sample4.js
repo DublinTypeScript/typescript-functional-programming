@@ -1,17 +1,25 @@
-var filter = (func) => { return (arr) => { return arr.filter(func); } };
-var map = (func) => { return (arr) => { return arr.map(func); } };
-var reduce = (func, initialVal) => { return (arr) => { return arr.reduce(func, initialVal); } };
-var compose = function(f, g) { return (x) => { return f(g(x)); } };
-var round = (a) => { return Math.round(a); };
-var sum = reduce((prev, curr) => { return prev + curr; }, 0);
-var size = (arr) => { return arr.length; };
-var mapProp = (prop) => { return map((item) => { return item[prop]; }); };
-var filterProp = (prop, matchVal) => { return filter((item) => { return item[prop] === matchVal; }); };
-var dividend = (a, b) => { return a / b; };
-var avg = (arr) => { return dividend(sum(arr), size(arr)); }
-var mapAvg = (mapFunc) => { return compose(round, compose(avg, mapFunc)); };
+var filter = (func) => (arr) => arr.filter(func);
+var map = (func) => (arr) => arr.map(func);
+var reduce = (func, initial) => (arr) => arr.reduce(func, initial);
+var compose = (f, g) => (x) => f(g(x));
 
-let examResults = [
+var sum = reduce((c, p) => c + p, 0);
+var dividend = (a, b) => (a / b);
+var round = (a) => Math.round(a);
+var size = (arr) => arr.length;
+var avg = (arr) => dividend(sum(arr), size(arr));
+var mapProp = (prop) => map((item) => item[prop]);
+var filterProp = (prop) => (matchVal) => filter((item) => item[prop] === matchVal);
+var mapAvg = (func) => compose(round, compose(avg, func));
+
+var mapTotalY = mapProp("totalTimeSpentStudying");
+var mapX = mapProp("score");
+var getXAvg = mapAvg(mapX);
+var filterByX = filterProp("score");
+var filterByXAvg = (result) => compose(filterByX, getXAvg)(result)(result);
+var getYAvgForXAvg = mapAvg(compose(mapTotalY, filterByXAvg));
+
+var examResults = [
     { score: 10, totalTimeSpentStudying: 10 },
     { score: 9, totalTimeSpentStudying: 10 },
     { score: 8, totalTimeSpentStudying: 10 },
@@ -24,12 +32,4 @@ let examResults = [
     { score: 3, totalTimeSpentStudying: 1 },
 ];
 
-var mapResultToScore = mapProp("score");
-var mapResultToTime = mapProp("totalTimeSpentStudying");
-var getScoreAvg = mapAvg(mapResultToScore);
-
-var scoreAvg = getScoreAvg(examResults);
-var filterByScore = filterProp("score", scoreAvg);
-var getTimeAvgForScoreAvg = mapAvg(compose(mapResultToTime, filterByScore));
-
-var result = getTimeAvgForScoreAvg(examResults);
+var result = getYAvgForXAvg(examResults);
