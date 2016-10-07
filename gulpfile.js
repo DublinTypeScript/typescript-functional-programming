@@ -4,6 +4,7 @@ var gulp        = require("gulp"),
     browserify  = require("browserify"),
     source      = require("vinyl-source-stream"),
     buffer      = require("vinyl-buffer"),
+    uglify      = require("gulp-uglify"),
     tsc         = require("gulp-typescript"),
     runSequence = require("run-sequence");
 
@@ -38,6 +39,7 @@ gulp.task("bundle", function() {
                 .bundle()
                 .pipe(source(outputFileName))
                 .pipe(buffer())
+                .pipe(uglify())
                 .pipe(gulp.dest(outputFolder));
 });
 

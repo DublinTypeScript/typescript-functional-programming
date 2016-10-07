@@ -1,5 +1,3 @@
-interface Result { score: number; totalTimeSpentStudying: number; }
-
 let filter = <T>(func: (item: T) => boolean) => (arr: T[]) => arr.filter(func);
 let map = <T1, T2>(func: (item: T1) => T2) => (arr: T1[]) => arr.map(func);
 let reduce = <T>(func: (curr: T, prev: T) => T, initial: T) => (arr: T[]) => arr.reduce(func, initial);
@@ -14,14 +12,19 @@ let mapProp = <T1, T2>(prop: string) => map<T1, T2>((item: T1) => item[prop] as 
 var filterProp = <T>(prop: string) => (matchVal: any) => filter((item: T) => item[prop] === matchVal);
 let mapAvg = <T>(func: (arr: T[]) => number[]) => compose(round, compose(avg, func));
 
-let mapTotalY = mapProp<Result, number>("totalTimeSpentStudying");
-let mapX = mapProp<Result, number>("score");
+interface IResult {
+    score: number;
+    totalTimeSpentStudying: number;
+}
+
+let mapTotalY = mapProp<IResult, number>("totalTimeSpentStudying");
+let mapX = mapProp<IResult, number>("score");
+let filterByX = filterProp<IResult>("score");
 let getXAvg = mapAvg(mapX);
-let filterByX = filterProp<Result>("score");
-let filterByXAvg = (r: Result[]) => compose(filterByX, getXAvg)(r)(r);
+let filterByXAvg = (r: IResult[]) => compose(filterByX, getXAvg)(r)(r);
 let getYAvgForXAvg = mapAvg(compose(mapTotalY, filterByXAvg));
 
-let examResults : Result[] = [
+let examResults : IResult[] = [
     { score: 10, totalTimeSpentStudying: 10 },
     { score: 9, totalTimeSpentStudying: 10 },
     { score: 8, totalTimeSpentStudying: 10 },

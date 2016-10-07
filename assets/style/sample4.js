@@ -14,8 +14,8 @@ var mapAvg = (func) => compose(round, compose(avg, func));
 
 var mapTotalY = mapProp("totalTimeSpentStudying");
 var mapX = mapProp("score");
-var getXAvg = mapAvg(mapX);
 var filterByX = filterProp("score");
+var getXAvg = mapAvg(mapX);
 var filterByXAvg = (result) => compose(filterByX, getXAvg)(result)(result);
 var getYAvgForXAvg = mapAvg(compose(mapTotalY, filterByXAvg));
 
