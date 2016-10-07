@@ -117,17 +117,26 @@ let files: IFile[] = [
     loaded: false,
     code: "",
     ranges: [
-      { loc: [0, 0], title: "IMPERATIVE" },
+      {
+        loc: [0, 0], title: "IMPERATIVE",
+        note: "This example of imperative programming is efficient but highly-coupled, hard to test and hard to re-use!"
+      },
       { loc: [0, 13], note: "We need to calculate hte AVG of the AVG" },
       { loc: [12, 19], note: "First we calculate the total score" },
-      { loc: [19, 21], note: "Then we calculate the AVG score" }
+      { loc: [18, 21], note: "Then we calculate the AVG score" },
+      { loc: [20, 30], note: "Then we find time spent studyng by students with AVG score" },
+      { loc: [29, 36], note: "Then we calculate the total time spent studyng by students with AVG score" },
+      { loc: [35, 38], note: "Finally, we calculate the AVG time spent studyng by students with AVG score" }
     ]
   },
   {
     path: "./assets/style/sample2.js",
     loaded: false,
     code: "",
-    ranges: []
+    ranges: [
+      { loc: [0, 0], title: "IMPERATIVE + LAMBDA" },
+      { loc: [0, 13], note: "We need to calculate hte AVG of the AVG" }
+    ]
   },
   {
     path: "./assets/style/sample3.js",
