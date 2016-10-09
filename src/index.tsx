@@ -105,7 +105,7 @@ function init(files: IFile[]) {
       url: file.path,
       dataType: "text",
       success: (response) => onSuccess(i, response, files),
-      error: (e) => alert(e)
+      error: (e) => console.log(e)
     });
   });
 }
@@ -118,7 +118,7 @@ let files: IFile[] = [
     code: "",
     ranges: [
       {
-        loc: [0, 0], title: "THE TYPE SYSTEM IS YOUR ENEMY!",
+        loc: [0, 0], title: "THE TYPE SYSTEM IS A LIAR!",
         note: "Referential transparency can only be guaranteed by a powerful type system"
       },
       { loc: [0, 5], note: "This function is used to ilustrate some kind of side effect" },
@@ -131,7 +131,7 @@ let files: IFile[] = [
       },
       {
         loc: [19, 22],
-        note: `The reality is that the type system is laying to
+        note: `The reality is that the type system is lying to
                us and sometimes it will not return due to some
                side effect. We cannot guarantee referential transparency 💩`
       },
@@ -164,7 +164,7 @@ let files: IFile[] = [
       },
       {
         loc: [67, 71],
-        note: `This time the type system is not laying to us and we can
+        note: `This time the type system is not lying to us and we can
                be sure that the function will always return a Maybe<User[]>.
                We can guarantee referential transparency! But we have 
                created a lot of boilerplate 💩. We could use a library
@@ -195,7 +195,7 @@ let files: IFile[] = [
       },
       {
         loc: [19, 23],
-        note: `This time the type system is not laying to us and we can
+        note: `This time the type system is not lying to us and we can
                be sure that the function will always return a Maybe<User[]>.
                We can guarantee referential transparency and we have used
                minimal boilerplate and no libraries 🚀. Just the TypeScript type system!
@@ -305,6 +305,68 @@ let files: IFile[] = [
         note: `Did you notice how we implemented the whole solution mentioning 
               "examResults", the data structure that we are manipulating, only once? 😎`
       }
+    ]
+  },
+  {
+    path: "./assets/style/sample6.js",
+    loaded: false,
+    code: "",
+    ranges: [
+      {
+        loc: [0, 0], title: "TYPESCRIPT + RAMDA",
+        note: `Ramda is a practical functional library for Javascript programmers`
+      }
+    ]
+  },
+  {
+    path: "./assets/reactive/rx.js",
+    loaded: false,
+    code: "",
+    ranges: [
+      {
+        loc: [0, 0], title: "RXJS",
+        note: `RxJS is a set of libraries to compose asynchronous and event-based programs
+              using observable collections and Array#extras style composition in JavaScript`
+      },
+      { loc: [0, 11], note: "TODO" },
+      { loc: [10, 29], note: "TODO" },
+      { loc: [30, 34], note: "TODO" },
+      { loc: [33, 50], note: "TODO" },
+      { loc: [51, 55], note: "TODO" },
+      { loc: [54, 69], note: "TODO" }
+    ]
+  },
+  {
+    path: "./assets/reactive/mobx.js",
+    loaded: false,
+    code: "",
+    ranges: [
+      {
+        loc: [0, 0], title: "MOBX",
+        note: `Simple, scalable state management`
+      },
+      { loc: [0, 4], note: "TODO" },
+      { loc: [3, 13], note: "TODO" },
+      { loc: [12, 20], note: "TODO" },
+      { loc: [19, 34], note: "TODO" },
+      { loc: [33, 44], note: "TODO" },
+      { loc: [43, 46], note: "TODO" },
+      { loc: [45, 48], note: "TODO" },
+      { loc: [47, 55], note: "TODO" }
+    ]
+  },
+  {
+    path: "./assets/reactive/cycle.js",
+    loaded: false,
+    code: "",
+    ranges: [
+      {
+        loc: [0, 0], title: "CYCLEJS",
+        note: `A functional and reactive JavaScript framework for cleaner code`
+      },
+      { loc: [0, 3], note: "TODO" },
+      { loc: [2, 20], note: "TODO" },
+      { loc: [19, 22], note: "TODO" }
     ]
   }
 ];
