@@ -92,11 +92,18 @@ class Presentation extends React.Component<IPresentationProps, void> {
 
 // Render App
 let onSuccess = makeOnSuccess((files: IFile[]) => {
-
   // rende to DOM
   render(<Presentation files={files} />, document.getElementById("main"));
-
 });
+
+function loadConfig(cb: (files: IFile[]) => void) {
+  $.ajax({
+    url: "./config/slides.json",
+    dataType: "json",
+    success: (response) => cb(response),
+    error: (e) => console.log(e)
+  });
+}
 
 // load files and render application
 function init(files: IFile[]) {
@@ -105,67 +112,12 @@ function init(files: IFile[]) {
       url: file.path,
       dataType: "text",
       success: (response) => onSuccess(i, response, files),
-      error: (e) => alert(e)
+      error: (e) => console.log(e)
     });
   });
 }
 
 // files to be loaded
-let files: IFile[] = [
-  {
-    path: "./assets/style/sample1.js",
-    loaded: false,
-    code: "",
-    ranges: [
-      { loc: [0, 0], title: "IMPERATIVE" },
-      { loc: [0, 13], note: "We need to calculate hte AVG of the AVG" },
-      { loc: [12, 19], note: "First we calculate the total score" },
-      { loc: [19, 21], note: "Then we calculate the AVG score" }
-    ]
-  },
-  {
-    path: "./assets/style/sample2.js",
-    loaded: false,
-    code: "",
-    ranges: []
-  },
-  {
-    path: "./assets/style/sample3.js",
-    loaded: false,
-    code: "",
-    ranges: []
-  },
-  {
-    path: "./assets/style/sample4.js",
-    loaded: false,
-    code: "",
-    ranges: []
-  },
-  {
-    path: "./assets/style/sample5.ts",
-    loaded: false,
-    code: "",
-    ranges: []
-  },
-  {
-    path: "./assets/types/sample1.ts",
-    loaded: false,
-    code: "",
-    ranges: []
-  },
-  {
-    path: "./assets/types/sample2.ts",
-    loaded: false,
-    code: "",
-    ranges: []
-  },
-  {
-    path: "./assets/types/sample3.ts",
-    loaded: false,
-    code: "",
-    ranges: []
-  }
-];
-
-// init app
-init(files);
+loadConfig((files) => {
+    init(files);
+});
