@@ -202,14 +202,14 @@
         "loc": [0, 0], "title": "MOBX",
         "note": "Simple, scalable state management"
       },
-      { "loc": [0, 4], "note": "TODO" },
-      { "loc": [3, 13], "note": "TODO" },
-      { "loc": [12, 20], "note": "TODO" },
-      { "loc": [19, 34], "note": "TODO" },
-      { "loc": [33, 44], "note": "TODO" },
-      { "loc": [43, 46], "note": "TODO" },
-      { "loc": [45, 48], "note": "TODO" },
-      { "loc": [47, 55], "note": "TODO" }
+      { "loc": [0, 4], "note": "Just importing some dependencies" },
+      { "loc": [3, 13], "note": "MobX adds observable capabilities to existing data structures like objects, arrays and class instances" },
+      { "loc": [12, 20], "note": "With MobX you can define values that will be derived automatically when relevant data is modified" },
+      { "loc": [19, 34], "note": "If you are using React, you can turn your (stateless function) components into reactive components by simply adding the @observer decorator" },
+      { "loc": [33, 44], "note": "The onClick handler in the above example will force the proper TodoView to render, and it will cause the TodoListView to render if the number of unfinished tasks has changed" },
+      { "loc": [43, 46], "note": "Crate instance of the our Store" },
+      { "loc": [45, 48], "note": "Render the app" },
+      { "loc": [47, 55], "note": "Set the initial state (the components in the app will render the new state)" }
     ]
   },
   {
