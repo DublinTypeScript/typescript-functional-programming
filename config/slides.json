@@ -221,9 +221,9 @@
         "loc": [0, 0], "title": "CYCLEJS",
         "note": "A functional and reactive JavaScript framework for cleaner code"
       },
-      { "loc": [0, 3], "note": "TODO" },
-      { "loc": [2, 20], "note": "TODO" },
-      { "loc": [19, 22], "note": "TODO" }
+      { "loc": [0, 3], "note": "Just importing some dependencies" },
+      { "loc": [2, 20], "note": "A CycleJS application runs inside a loop. The inputs of your application are change notifications from the external world (sources) and outpus of your application are update mesages (sinks) for the external world (DOM, LocalStorage, etc.). The external world may be asynchronous but your application is synchronous" },
+      { "loc": [19, 22], "note": "Run the application (Will render the component)" }
     ]
   }
 ]
