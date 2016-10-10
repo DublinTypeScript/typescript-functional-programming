@@ -170,10 +170,10 @@
         "loc": [0, 0], "title": "RAMDA",
         "note": "Ramda is a practical functional library for Javascript programmers"
       },
-      { "loc": [0, 6], "note": "TODO" },
-      { "loc": [5, 13], "note": "TODO" },
-      { "loc": [12, 26], "note": "TODO" },
-      { "loc": [25, 28], "note": "TODO" }
+      { "loc": [0, 6], "note": "Declare some re-usable functions. This time we are using some of the Ramda helpers!" },
+      { "loc": [5, 13], "note": "Declare some functions to map and filter the exam results data structure." },
+      { "loc": [12, 26], "note": "Did you notice how until this point we have only declared functions? 😎" },
+      { "loc": [25, 28], "note": "Did you notice how we implemented the whole solution mentioning without 'examResults'? 😎" }
     ]
   },
   {
