@@ -185,12 +185,12 @@
         "loc": [0, 0], "title": "RXJS",
         "note": "RxJS is a set of libraries to compose asynchronous and event-based programs using observable collections and Array#extras style composition in JavaScript"
       },
-      { "loc": [0, 11], "note": "TODO" },
-      { "loc": [10, 29], "note": "TODO" },
-      { "loc": [30, 34], "note": "TODO" },
-      { "loc": [33, 50], "note": "TODO" },
-      { "loc": [51, 55], "note": "TODO" },
-      { "loc": [54, 69], "note": "TODO" }
+      { "loc": [0, 11], "note": "We uase Rx.Observable.create to create an observable" },
+      { "loc": [10, 29], "note": "Subscribing works always the same way independently of how an obervable was created" },
+      { "loc": [30, 34], "note": "We can create an observable from an Array" },
+      { "loc": [33, 50], "note": "Subscribing works always the same way independently of how an obervable was created" },
+      { "loc": [51, 55], "note": "We can create an observable from a Promise" },
+      { "loc": [54, 69], "note": "Subscribing works always the same way independently of how an obervable was created" }
     ]
   },
   {
