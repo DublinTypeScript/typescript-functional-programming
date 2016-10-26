@@ -8,8 +8,8 @@ let dividend = (a: number, b: number) => (a / b);
 let round = (a: number) => Math.round(a);
 let size = (arr: any[]) => arr.length;
 let avg = (arr: number[]) => dividend(sum(arr), size(arr));
-let mapProp = <T1, T2>(prop: string) => map<T1, T2>((item: T1) => item[prop] as T2);
-var filterProp = <T>(prop: string) => (matchVal: any) => filter((item: T) => item[prop] === matchVal);
+let mapProp = <T1, T2>(prop: string) => map<T1, T2>((item: T1) => (item as any)[prop] as T2);
+var filterProp = <T1, T2>(prop: string) => (matchVal: T2) => filter((item: T1) => (item as any)[prop] === matchVal);
 let mapAvg = <T>(func: (arr: T[]) => number[]) => compose(round, compose(avg, func));
 
 interface IResult {
@@ -19,7 +19,7 @@ interface IResult {
 
 let mapTotalY = mapProp<IResult, number>("totalTimeSpentStudying");
 let mapX = mapProp<IResult, number>("score");
-let filterByX = filterProp<IResult>("score");
+let filterByX = filterProp<IResult, number>("score");
 let getXAvg = mapAvg(mapX);
 let filterByXAvg = (r: IResult[]) => compose(filterByX, getXAvg)(r)(r);
 let getYAvgForXAvg = mapAvg(compose(mapTotalY, filterByXAvg));
